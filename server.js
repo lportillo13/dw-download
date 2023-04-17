@@ -9,6 +9,9 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(3000, () => {
-  console.log('App listening on port 3000!');
+// Use the process.env.PORT variable if available
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
 });
